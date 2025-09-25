@@ -14,17 +14,41 @@ A powerful text-to-image generation application using Hugging Face's diffusion m
 
 ## 🚀 Quick Start
 
-1. **Install dependencies:**
+### **Option 1: Automated Setup (Recommended)**
 ```bash
-pip install -r requirements.txt
+# 1. Run the setup script
+./setup.sh
+
+# 2. Start the application
+./run_app.sh
 ```
 
-2. **Run the application:**
+### **Option 2: Manual Setup**
 ```bash
+# 1. Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Test imports
+python3 test_imports.py
+
+# 4. Run the application
 streamlit run image_generator.py
 ```
 
-3. **Open your browser** and start creating!
+### **Option 3: Direct Run (if dependencies already installed)**
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Run the app
+streamlit run image_generator.py
+```
+
+The app will open in your browser at `http://localhost:8501`
 
 ## 🎯 Supported Models
 

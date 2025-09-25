@@ -235,7 +235,7 @@ class DiffusionModelManager:
             return images, generation_info
             
         except Exception as e:
-            logger.error(f"Image generation failed: {str(e)}")
+            logger.error(f"Image generation dfailed: {str(e)}")
             raise
     
     def get_model_info(self) -> Optional[ModelInfo]:
