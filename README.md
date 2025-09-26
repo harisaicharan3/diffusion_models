@@ -108,9 +108,15 @@ diffusion_models/
 ├── image_generator.py      # Main Streamlit application
 ├── diffusion_models.py     # Core diffusion model logic
 ├── image_processor.py      # Image processing utilities
-├── model_manager.py        # Model loading and management
+├── model_evaluator.py      # Comprehensive model evaluation system
+├── eval_config.py          # Evaluation configurations and presets
+├── run_evaluation.py       # Easy-to-use evaluation runner
+├── demo_evaluation.py      # Demo script for evaluation system
+├── requirements.txt        # Main dependencies
+├── requirements_eval.txt   # Additional evaluation dependencies
 ├── examples/              # Sample prompts and demos
-├── requirements.txt       # Dependencies
+├── DIFFUSION_MODELS.md    # Technical explanation of diffusion models
+├── EVALUATION_GUIDE.md    # Comprehensive evaluation guide
 └── README.md             # This file
 ```
 
@@ -149,6 +155,41 @@ diffusion_models/
 - **Content Filtering**: Optional safety checks for inappropriate content
 - **Offline Mode**: Works without internet after initial setup
 
+## 🧪 Model Evaluation
+
+This project includes a comprehensive evaluation system for comparing diffusion models:
+
+### Quick Start
+```bash
+# Install evaluation dependencies
+pip install -r requirements_eval.txt
+
+# Run quick test
+python run_evaluation.py --config quick_test
+
+# Compare models
+python run_evaluation.py --config comprehensive
+
+# Custom evaluation
+python run_evaluation.py --custom --model "runwayml/stable-diffusion-v1-5" --eval-type basic
+```
+
+### Available Configurations
+- **quick_test**: Fast models with basic prompts (~5-10 min)
+- **comprehensive**: Popular models with diverse prompts (~30-60 min)
+- **artistic_focus**: Creative models with artistic prompts (~45-90 min)
+- **speed_benchmark**: Performance comparison (~10-20 min)
+- **quality_benchmark**: High-quality models (~60-120 min)
+
+### Features
+- **Automated model downloading** from Hugging Face
+- **Comprehensive metrics**: speed, quality, prompt adherence, diversity
+- **Visual comparison reports** with charts and rankings
+- **CLIP-based semantic evaluation** for prompt adherence
+- **Predefined test configurations** for different use cases
+
+📖 **Detailed Guide**: See [EVALUATION_GUIDE.md](EVALUATION_GUIDE.md) for comprehensive instructions.
+
 ## 🤝 Contributing
 
 Feel free to contribute to this project! Some ideas:
@@ -157,6 +198,7 @@ Feel free to contribute to this project! Some ideas:
 - Add more image processing features
 - Create custom UI themes
 - Add batch processing capabilities
+- Improve evaluation metrics and test prompts
 
 ## 📄 License
 
